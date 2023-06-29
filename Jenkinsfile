@@ -66,13 +66,6 @@ pipeline {
             }
           }
         }
-        stage('Docker BnP') {
-          steps {
-            container('kaniko') {
-              sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --insecure --skip-tls-verify --cache=true --force --destination=docker.io/cloudguy7701/dsodemo'
-            }
-          }
-        }
       }
     }
 
